@@ -7,7 +7,7 @@ export default function Home() {
   const [foodCat, setFoodCat] = useState([])
   const [foodItems, setFoodItems] = useState([])
   const [search, setSearch] = useState('')
-  const loadFoodItems = async () => {
+  const loadFoodItems =  async () => {
     let response = await fetch("https://food-delivery-app-backend-five.vercel.app/api/foodData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
@@ -62,7 +62,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className='container'> {/* boootstrap is mobile first */}
+      <div className="container"> {/* boootstrap is mobile first */}
         {
           foodCat !== []
             ? foodCat.map((data) => {
@@ -78,7 +78,7 @@ export default function Home() {
                     .map(filterItems => {
                       return (
                         <div key={filterItems.id} className='col-12 col-md-6 col-lg-3'>
-                          {console.log(filterItems.url)}
+                          {(filterItems.url)}
                           <Card foodName={filterItems.name} item={filterItems} options={filterItems.options[0]} ImgSrc={filterItems.img} ></Card>
                         </div>
                       )
