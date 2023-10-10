@@ -12,11 +12,7 @@ export default function Home() {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-
-    });
+      });
     response = await response.json()
     // console.log(response[1][0].CategoryName)
     setFoodItems(response[0])
